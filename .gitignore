@@ -1,0 +1,9 @@
+/node_modules
+/src/**/*.js
+/src/**/*.d.ts
+/src/**/*.map
+/tests/**/*.js
+/tests/**/*.d.ts
+/tests/**/*.map
+!/src/vendor/*.js
+!/src/addon/*.js
