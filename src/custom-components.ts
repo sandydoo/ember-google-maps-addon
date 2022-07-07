@@ -24,7 +24,7 @@ export function getCustomComponentsFromOptions(options: ComponentDeclaration): C
   return get(options, ['ember-google-maps', 'customComponents'], {});
 }
 
-export default class CustomComponents {
+export class CustomComponents {
   static for(appInstance: AppInstance): CustomComponents {
     let globalStore = getGlobalStore();
 
