@@ -24,22 +24,22 @@ export function getCustomComponentsFromOptions(options: ComponentDeclaration): C
   return get(options, ['ember-google-maps', 'customComponents'], {});
 }
 
-export class CustomComponents {
+export default class CustomComponents {
   static for(appInstance: AppInstance): CustomComponents {
     let globalStore = getGlobalStore();
 
-    // if (!globalStore.has(appInstance)) {
-    //   globalStore.set(appInstance, new Map());
-    // }
-
     let customComponents = globalStore.get(appInstance) ?? new Map();
+
+    if (!globalStore.has(appInstance)) {
+      globalStore.set(appInstance, customComponents);
+    }
 
     return new CustomComponents(appInstance.name, customComponents);
   }
 
   private hostAppName: string;
   private mergeTactic?: MergeTactic;
-  public customComponents: Map<string, ComponentDeclaration>;
+  private customComponents: Map<string, ComponentDeclaration>;
 
   constructor(hostAppName: string, customComponents: Map<string, ComponentDeclaration>) {
     this.hostAppName = hostAppName;

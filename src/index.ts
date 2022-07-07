@@ -1,1 +1,1 @@
-export { CustomComponents, getCustomComponentsFromOptions } from './custom-components';
+export { default as CustomComponents, getCustomComponentsFromOptions } from './custom-components';
