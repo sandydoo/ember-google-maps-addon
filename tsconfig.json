@@ -3,7 +3,7 @@
     "./src/**/*.ts",
   ],
   "compilerOptions": {
-    "target": "es2019",
+    "target": "es2017",
     "module": "commonjs",
     "declaration": true,
     "typeRoots": ["node_modules/@types"],
@@ -16,8 +16,7 @@
     "allowUnreachableCode": false,
     "strict": true,
     "skipLibCheck": true,
-    "useUnknownInCatchVariables": false,
-    "allowSyntheticDefaultImports": true
+    "useUnknownInCatchVariables": false
   },
   "exclude": [
     "node_modules",

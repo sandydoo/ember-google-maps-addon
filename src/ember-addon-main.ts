@@ -1,17 +1,13 @@
 import CustomComponents, { AppInstance, getCustomComponentsFromOptions } from './custom-components';
 
-export = {
+module.exports = {
   name: 'ember-google-maps-addon',
 
   included(this: any, parent: any) {
     this._super.included.apply(this, arguments);
 
     let appInstance: AppInstance = this._findHost();
-    let config = appInstance.options['ember-google-maps'] ?? {};
-    let components = CustomComponents.for(appInstance)
-      .useMergeTactic(config.mergeCustomComponents)
+    CustomComponents.for(appInstance)
       .add(parent.name, getCustomComponentsFromOptions(parent.options));
-
-    console.log(components);
   },
 };

@@ -24,18 +24,17 @@
     "compile": "tsc",
     "lint": "eslint . --cache"
   },
-  "dependencies": {},
   "devDependencies": {
-    "lodash": "^4.17.21",
+    "@embroider/shared-internals": "^1.8.3",
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^15.12.2",
     "@typescript-eslint/eslint-plugin": "^4.1.1",
     "@typescript-eslint/parser": "^4.1.1",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "lodash": "^4.17.21",
     "prettier": "^2.3.1",
-    "@embroider/shared-internals": "^1.8.3",
-    "@types/lodash": "^4.14.170",
-    "@types/node": "^15.12.2",
     "typescript": "^4.7.4"
   },
   "engines": {

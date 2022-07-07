@@ -9,8 +9,6 @@ export interface AppInstance extends EmbroiderAppInstance {
   name: string
 }
 
-/* global global */
-
 function getGlobalStore() {
   let g = global as any as { __ember_google_maps_custom_components__: GlobalSharedState | undefined };
   if (!g.__ember_google_maps_custom_components__) {
@@ -56,12 +54,12 @@ export default class CustomComponents {
     return this;
   }
 
-  add(fromAddon: string, components: ComponentDeclaration) {
+  add(fromAddon: string, components: ComponentDeclaration): CustomComponents {
     this.customComponents.set(fromAddon, components);
     return this;
   }
 
-  merge() {
+  merge(): ComponentDeclaration {
     if (this.mergeTactic) {
       // TODO Verify that the output is correct?
       return this.mergeTactic(this.customComponents);
